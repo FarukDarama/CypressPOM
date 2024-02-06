@@ -1,0 +1,14 @@
+{
+    "firstName" : "Faruk", 
+    "lastName" : "Darama", 
+    "dateOfBirth" :"1985-09-15",
+    "address" : "Seligenstadt Hessen",
+    "postCode" : "63500",
+    "city" :"Offenbach",
+    "state":"Hesen",
+    "country":"Germany",
+    "phone" :"0123456789",
+    "email" : "faker1234@faker.com",
+    "password":"123456",
+    "emaliAlreadyExistMessage":"A customer with this email address already exists."
+}

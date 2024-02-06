@@ -13,58 +13,63 @@ class RegisterPage{
         this.emailInput='#email'
         this.passwordInput='#password'
         this.registerButton='[type="submit"]'
+        this.emailAlreadyExistMessage ='.help-block'
     }
 
 
 
 
     // Metotlar
-    writeFirstName() {
-        cy.get(this.firstNameInput).type('Gürkay')
+    writeFirstName(firstName) {
+        cy.get(this.firstNameInput).type(firstName)
     }
 
-    writeLastName() {
-        cy.get(this.lastNameInput).type('Birinci')
+    writeLastName(lastName) {
+        cy.get(this.lastNameInput).type(lastName)
     }
 
-    writeDateOfBirth() {
-        cy.get(this.dateOfBirthInput).type('1985-09-15')
+    writeDateOfBirth(dateOfBirth) {
+        cy.get(this.dateOfBirthInput).type(dateOfBirth)
     }
 
-    writeAddress() {
-        cy.get(this.addressInput).type('Seligenstadt Hessen')
+    writeAddress(address) {
+        cy.get(this.addressInput).type(address)
     }
 
-    writePostCode() {
-        cy.get(this.postCodeInput).type('63500')
+    writePostCode(postCode) {
+        cy.get(this.postCodeInput).type(postCode)
     }
 
-    writeCity() {
-        cy.get(this.cityInput).type('Offenbach')
+    writeCity(city) {
+        cy.get(this.cityInput).type(city)
     }
 
-    writeState() {
-        cy.get(this.stateInput).type('Offenbach')
+    writeState(state) {
+        cy.get(this.stateInput).type(state)
     }
     
-    selectCountry() {
-        cy.get(this.countrySelect).select('Germany')
+    selectCountry(country) {
+        cy.get(this.countrySelect).select(country)
     }
 
-    writePhone() {
-        cy.get(this.phoneInput).type('01789067876')
+    writePhone(phone) {
+        cy.get(this.phoneInput).type(phone)
     }
 
-    writeEmail() {
-        cy.get(this.emailInput).type('faker@faker.com')
+    writeEmail(email) {
+        cy.get(this.emailInput).type(email)
     }
 
-    writePassword() {
-        cy.get(this.passwordInput).type('123456')
+    writePassword(password) {
+        cy.get(this.passwordInput).type(password)
     }
 
     clickRegister(){
         cy.get(this.registerButton).click();
+    }
+
+    verifyEmailAlreadyExistMessage(errorMessage){
+     cy.get(this.emailAlreadyExistMessage).should('have.text',errorMessage)
     }
 }
 export const register = new RegisterPage()
