@@ -4,7 +4,8 @@
   "description": "Cypress Page Object Model and Data Driven Test Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "registerTest": "npx cypress run --browser chrome --headed --spec cypress/e2e/RegisterTest.cy.js"
   },
   "author": "Faruk Darama",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "cypress": "^13.6.4"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.4.0"
+    "@faker-js/faker": "^8.4.0",
+    "cypress-mochawesome-reporter": "^3.8.1"
   }
 }
