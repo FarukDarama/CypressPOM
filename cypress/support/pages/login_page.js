@@ -1,13 +1,33 @@
-class LoginPage{
+class LoginPage {
     //Web Elements
-    constructor (){
-        this.pageTitle ='h3'
+    constructor() {
+        this.pageTitle = 'h3'
+        this.emailInput = '#email'
+        this.passwordInput = '#password'
+        this.loginButton = '[value="Login"]'
+        this.invalidEmailOrPasswordMessage = '.help-block'
     }
 
     //Methods
-    verifyPageTitle(pageTitle){
-        cy.get(this.pageTitle).should('have.text',pageTitle);
+    verifyPageTitle(pageTitle) {
+        cy.get(this.pageTitle).should('have.text', pageTitle);
+    }
+
+    writeEmail(email) {
+        cy.get(this.emailInput).type(email);
+    }
+
+    writePassword(password) {
+        cy.get(this.passwordInput).type(password);
+    }
+
+    clickLoginButton() {
+        cy.get(this.loginButton).click();
+    }
+
+    verifyInvalidEmailOrPasswordMessage(message) {
+        cy.get(this.invalidEmailOrPasswordMessage).should('have.text', message);
     }
 }
 
-export const login =new LoginPage();
+export const login = new LoginPage();
